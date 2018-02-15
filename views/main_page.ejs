@@ -1,0 +1,103 @@
+<div class="ui secondary menu">
+	<div class="right menu">
+		
+		<% if(me==null) { %>
+			<div class="item">
+			USER NOT LOGGED IN
+			</div>
+		<% } %>
+
+		<% if(me!=null) { %>
+			<div class="item">
+			<%= me %> LOGGED IN
+			</div>
+			<div class="item logout">
+				<form action="/logout" method="post">
+					<input type="submit" value="LOGOUT" class="ui button">
+				</form>
+			</div>
+		<% } %>
+			
+		
+	</div>
+
+</div>
+
+
+		<div class="ui container">
+			<br>
+
+			<h1>Welcome to the main page!</h1>
+
+				<h4>New user? Register here!</h4>
+				
+				<a class="ui button" href="/loadRegisterPage">
+					Register
+				</a>
+			<br>
+			<br>
+			
+				<h4>Existing user? Login here!</h4>
+				
+				<a class="ui button" href="/loadLoginPage">
+					Login
+				</a>
+			<br>
+
+		</div>
+
+<br>
+<br>
+
+<div class="ui container">
+
+	<table class="ui celled table">
+		<thead>
+		<tr>
+			<th>Chat ID</th>
+			<th>User Name</th>
+			<th>User says </th>
+			<th>Date & time</th>
+		</tr>
+		</thead>
+		<tbody>
+		<% chats.forEach(function(chat){ %>
+				<tr>
+					<td> <%= chat.id %> </td>
+					<td> <%= chat.username %> </td>
+					<td> Hi! </td>
+					<td> <%= chat.createdAt %> </td>
+				</tr>
+
+		<% }); %>
+
+
+		</tbody>
+
+	</table>
+
+	<br>
+
+    <div>
+        <form action="/enterHI" method="post">
+            <input type="submit" value="Send HI!" class="ui teal button">
+        </form>
+    </div>
+	
+<br>
+
+</div>
+
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+
+
+
+
+

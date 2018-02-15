@@ -32,9 +32,21 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  }
+  // '/': {
+  //    view: 'homepage',
+  // }
+
+  'GET /': 'MainController.landingPage',
+  'GET /loadRegisterPage': 'MainController.loadRegisterPage',
+  'GET /loadLoginPage': 'MainController.loadLoginPage',
+
+
+  'POST /register': 'UserController.registerUser',
+  'POST /login': 'UserController.loginUser',
+  'POST /logout': 'UserController.logoutUser',
+
+  'POST /enterHI': 'ChatController.enterHI',
+
 
   /***************************************************************************
   *                                                                          *
